@@ -1,0 +1,98 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+$schema: https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+blocks:
+  - alignment: left
+    segments:
+      - background: '#bdd2ff' # OS
+        foreground: '#1d2134'
+        leading_diamond: 
+        properties:
+          prefix: ' '
+          wsl: ''
+          wsl_separator: ''
+        style: diamond
+        trailing_diamond: 
+        type: os
+      - background: '#bdd2ff' # path
+        foreground: '#0C212F'
+        leading_diamond: <transparent,#bdd2ff></>
+        properties:
+          folder_icon: 
+          folder_separator_icon: <transparent>  </>
+          home_icon: 
+          style: agnoster_short
+        style: diamond
+        trailing_diamond: 
+        type: path
+      - background: '#bdd2ff' # git
+        background_templates:
+          - '{{ if or (.Working.Changed) (.Staging.Changed) }}#bdd2ff{{ end }}'
+          - '{{ if and (gt .Ahead 0) (gt .Behind 0) }}#bdd2ff{{ end }}'
+          - '{{ if gt .Ahead 0 }}#bdd2ff{{ end }}'
+          - '{{ if gt .Behind 0 }}#bdd2ff{{ end }}'
+        foreground: '#0C212F'
+        powerline_symbol: 
+        properties:
+          fetch_stash_count: true
+          fetch_status: true
+          fetch_upstream_icon: true
+          prefix: ' '
+          template:
+            '{{ .UpstreamIcon }}{{ .HEAD }}{{ if .Staging.Changed }}  {{ .Staging.String
+            }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{
+            if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if gt .StashCount
+            0 }}  {{ .StashCount }}{{ end }}'
+        style: powerline
+        type: git
+      - background: '#bdd2ff' # execution time
+        foreground: '#0C212F'
+        leading_diamond: <transparent,#bdd2ff></>
+        properties:
+          postfix: 's '
+          style: dallas
+          threshold: 0
+        style: diamond
+        trailing_diamond: 
+        type: executiontime
+      - background: '#bdd2ff' # exit
+        foreground: '#0C212F'
+        leading_diamond: <transparent,background></>
+        properties:
+          prefix: '<transparent> </> '
+          template: '{{ .Text }}'
+        style: diamond
+        trailing_diamond: 
+        type: exit
+    type: prompt
+  # - alignment: right
+  #   segments:
+      # - background: '#bdd2ff' # Node
+      #   foreground: '#1d2134'
+      #   leading_diamond: 
+      #   trailing_diamond: 
+      #   type: node
+      #   style: diamond
+      #   properties:
+      #     prefix: ' '
+      #     display_version: true
+      # - background: '#bdd2ff' # AWS
+      # foreground: '#1d2134'
+      # leading_diamond: 
+      # trailing_diamond: 
+      # properties:
+      #   prefix: '  '
+      #   template: '{{.Profile}}{{if .Region}}  {{.Region}}{{end}}'
+      #   display_default: false
+      # style: diamond
+      # type: aws
+      # newline: true
+      # vertical_offset: 1
+    # type: prompt
+console_title: true
+console_title_style: template
+console_title_template:
+  "{{if .Root}} ⚡ {{end}}{{.Folder | replace \"~\" \"\U0001F3E0\"}}
+  @ {{.Host}}"
+final_space: true
+osc99: true
