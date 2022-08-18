@@ -45,6 +45,7 @@ brew reinstall curl
 brew install --cask raycast
 brew install --cask dozer
 brew install starship
+brew install leapp
 
 # Fonts
 brew tap homebrew/cask-fonts

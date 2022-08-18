@@ -28,6 +28,7 @@ Installs [Homebrew](https://brew.sh/) and other necessitites. Zsh, python and vi
 * [dozer](https://github.com/Mortennn/Dozer)
 * [starship](https://starship.rs/) - Haven't played with this yet but looks promising
 * [cask fonts and Fira Code Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/FiraCode/font-info.md)
+* [Leapp](https://www.leapp.cloud/) - Now used instead of AWSume
 
 ### zsh-setup.sh
 Installs Oh My Zsh, reasonable plugins and copies my `.zshrc`.
@@ -38,7 +39,7 @@ Installs Oh My Zsh, reasonable plugins and copies my `.zshrc`.
 * [autoupdate](https://github.com/TamCore/autoupdate-oh-my-zsh-plugins)
 
 ### aws-setup.sh
-Installs the [AWS Cli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) and [AWSume](https://awsu.me/general/quickstart.html).
+Installs the [AWS Cli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html).
 
 ## Applications (Not installed via scripts)
 These need to be manually downloaded and installed. Some of them have brew versions but I prefer the autoupdates of these.
